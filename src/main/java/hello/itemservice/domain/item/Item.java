@@ -2,12 +2,16 @@ package hello.itemservice.domain.item;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.ScriptAssert;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
+@ScriptAssert(lang = "javascript",
+        script = "_this.price * _this.quantity >= 10000",
+        message = "총합이 10000넘게 입력해주세요") //컨트롤러쪽에 로직을 넣는걸 추천(object error같은경우)
 public class Item {
 
     private Long id;
