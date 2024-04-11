@@ -14,18 +14,18 @@ import javax.validation.constraints.NotNull;
         message = "총합이 10000넘게 입력해주세요") //컨트롤러쪽에 로직을 넣는걸 추천(object error같은경우)
 public class Item {
 
-    @NotNull(groups = UpdateCheck.class)
+    //@NotNull(groups = UpdateCheck.class)
     private Long id;
 
-    @NotBlank(groups = {SaveCheck.class, UpdateCheck.class}) //수정 요구사항 추가
+    //@NotBlank(groups = {SaveCheck.class, UpdateCheck.class}) //수정 요구사항 추가
     private String itemName;
 
-    @NotNull(groups = {SaveCheck.class, UpdateCheck.class})
-    @Range(min = 1000, max = 100000, groups = {SaveCheck.class, UpdateCheck.class})
+    //@NotNull(groups = {SaveCheck.class, UpdateCheck.class})
+    //@Range(min = 1000, max = 100000, groups = {SaveCheck.class, UpdateCheck.class})
     private Integer price;
 
-    @NotNull(groups = {SaveCheck.class, UpdateCheck.class})
-    @Max(value = 9999, groups = {SaveCheck.class}) //수정 요구사항 추가
+    //@NotNull(groups = {SaveCheck.class, UpdateCheck.class})
+    //@Max(value = 9999, groups = {SaveCheck.class}) //수정 요구사항 추가
     private Integer quantity;
 
     public Item() {
